@@ -14,7 +14,7 @@
 
 #cta .title {
     font-size: 4rem;
-    color: var(--color-neutral-1);;
+    color:white;
 }
 
 #cta .title span {
@@ -58,12 +58,9 @@
     z-index: 2;
 }
 
-#banner img {
-    height: 100%;
-    width: fit-content;
-}
 
-.shape {
+
+.shape, #banner img  {
     background-color: var(--color-primary-2);
     width: 50%;
     height: 100%;

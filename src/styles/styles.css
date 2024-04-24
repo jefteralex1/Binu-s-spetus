@@ -6,12 +6,12 @@
 @import url('footer.css');
 
 :root {
-    --color-primary-1: #fff9ea;
+    --color-primary-1: #04061a;
     --color-primary-2: #ffe8b4;
     --color-primary-3: #f8d477;
-    --color-primary-4: #ffe100;
+    --color-primary-4: #dd4c4c;
     --color-primary-5: #ffcb45;
-    --color-primary-6: #e9a209;
+    --color-primary-6: #ff2b2b;
 
     --color-neutral-0: #fff;
     --color-neutral-1: #1d1d1d;
@@ -41,7 +41,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-primary-5);
+    background-color: white;
     border-radius: 12px;
     padding: 10px 14px;
     font-weight: 600;
@@ -51,7 +51,7 @@ section {
 }
 
 .btn-default:hover {
-    background-color: var(--color-primary-3);
+    background-color: var(--color-primary-4);
 }
 
 .social-media-buttons {
