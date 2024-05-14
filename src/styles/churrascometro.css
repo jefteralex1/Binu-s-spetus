@@ -1,0 +1,15 @@
+.churras-title{
+    text-align: center;
+    font-size: 2.1875rem;
+    color: white;
+}
+
+.owl-carousel{
+    background-color: black;
+}
+
+/* CSS */
+#dishes .slick-slide {
+    margin: 0 10px; /* Adiciona um espaço de 10 pixels entre os itens */
+}
+     

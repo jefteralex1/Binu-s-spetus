@@ -19,6 +19,13 @@
     width: 50%;
 }
 
+.section-title{
+    color: white;
+}
+.section-subtitle{
+    color: white;
+}
+
 #feedbacks {
     display: flex;
     flex-direction: column;
