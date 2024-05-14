@@ -6,7 +6,7 @@
     min-height: 100vh;
 }
 
-#dishes {
+.dishes {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@
 
 .see-more{
     text-align: center;
-    margin: 20px;
+    margin: 30px;
 }
 
 @media screen and (max-width: 1170px) {
