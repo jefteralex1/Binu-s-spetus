@@ -4,6 +4,7 @@
 @import url('menu.css');
 @import url('testimonials.css');
 @import url('footer.css');
+@import url('churrascometro.css');
 
 :root {
     --color-primary-1: #04061a;
@@ -29,7 +30,7 @@ html {
 }
 
 body {
-    background-color: var(--color-primary-1);
+    background-color: #04061a;
 }
 
 section {
