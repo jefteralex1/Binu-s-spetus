@@ -64,9 +64,11 @@ h1 {
 }
 
 .btn-dark {
-  background-color: rgb(25, 105, 186);
+  background-color: #010257;
   color: white;
+  border: 1px solid;
   border: none;
+  padding: 5px;
 }
 
 .btn-dark-disabled {
@@ -76,9 +78,10 @@ h1 {
 }
 
 .btn-light {
-  background-color: white;
-  color: #1969ba;
+  background-color: #ff2b2b;
+  color: #ffffff;
   border: 1px solid;
+  padding: 5px;
 }
 
 .btn-light-disabled {
