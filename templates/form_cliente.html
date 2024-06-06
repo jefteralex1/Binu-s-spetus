@@ -1,0 +1,35 @@
+<form class="c-form"
+    {% if cliente %}
+      action="{{ url_for('cliente.atualizar_cliente', cliente_id=cliente.id) }}"
+    {% else %}
+      action="{{ url_for('cliente.inserir_cliente') }}"
+    {% endif %}
+    method="{% if cliente %}PUT{% else %}POST{% endif %}"
+
+    {% if cliente %}
+      c-swap="#cliente-{{cliente.id}}"
+    {% else %}
+      c-append="#lista-clientes"
+    {% endif %}>
+
+    <!-- Se a variável 'cliente' estiver definida, a ação do formulário será atualizar o cliente existente, caso contrário, será inserir um novo cliente. -->
+    <!-- O método do formulário será 'PUT' para atualizar um cliente existente e 'POST' para inserir um novo cliente. -->
+    <!-- 'c-swap' ou 'c-append' são atributos personalizados da biblioteca cru.js, para manipulação dinâmica na interface, como substituir ou adicionar conteúdo à lista de clientes. -->
+
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" name="nome" {% if cliente %}value="{{ cliente.nome }}"{% endif %}>
+        <!-- Campo de entrada para o nome do cliente. Se a variável 'cliente' estiver definida, o campo será preenchido com o nome do cliente. -->
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" {% if cliente %}value="{{ cliente.email }}"{% endif %}>
+        <!-- Campo de entrada para o email do cliente. Se a variável 'cliente' estiver definida, o campo será preenchido com o email do cliente. -->
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        {% if cliente %}Salvar{% else %}Criar{% endif %}
+    </button>
+    <!-- Botão de envio do formulário. O texto do botão será 'Salvar' se a variável 'cliente' estiver definida e 'Criar' caso contrário. -->
+</form>

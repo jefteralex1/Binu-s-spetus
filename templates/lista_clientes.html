@@ -1,0 +1,25 @@
+<table class="table"> <!-- Define uma tabela com a classe 'table' para estilização usando Bootstrap. -->
+
+  <thead> <!-- Define a seção de cabeçalho da tabela. -->
+
+    <tr> <!-- Define uma linha de cabeçalho da tabela. -->
+
+        <th scope="col">#</th> <!-- Define uma célula de cabeçalho (th) com o escopo da coluna e exibe um identificador. -->
+
+        <th scope="col">Nome</th> <!-- Define uma célula de cabeçalho (th) com o escopo da coluna e exibe o rótulo 'Nome'. -->
+
+        <th scope="col">Email</th> <!-- Define uma célula de cabeçalho (th) com o escopo da coluna e exibe o rótulo 'Email'. -->
+
+        <th scope="col">Ações</th>
+          <!-- Define uma célula de cabeçalho (th) com o escopo da coluna e exibe o rótulo 'Ações'. -->
+    </tr>
+  </thead>
+
+  <tbody id="lista-clientes"> <!-- Define a seção de corpo da tabela e atribui a ID 'lista-clientes'. -->
+
+    {% for cliente in clientes %} <!-- Itera sobre a lista de clientes. -->
+
+        {% include 'item_cliente.html' %} <!-- Inclui o conteúdo do arquivo 'item_cliente.html' para cada cliente na lista. -->
+    {% endfor %}
+  </tbody>
+</table>

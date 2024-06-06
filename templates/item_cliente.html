@@ -1,0 +1,32 @@
+<tr id="cliente-{{cliente.id}}"> <!-- Define uma linha de tabela (tr) com um ID dinâmico baseado no ID do cliente. Isso permite a identificação única e manipulação da linha via JavaScript. -->
+
+    <th scope="row">{{ cliente.id }}</th> <!-- Define uma célula de cabeçalho (th) com o escopo da linha e exibe o ID do cliente. -->
+
+    <td>{{ cliente.nome }}</td> <!-- Define uma célula de dados (td) que exibe o nome do cliente. -->
+
+    <td>{{ cliente.email }}</td> <!-- Define uma célula de dados (td) que exibe o email do cliente. -->
+
+    <td> <!-- Define uma célula de dados (td) que contém botões de ação para o cliente. -->
+
+        <button class="btn btn-secondary" c-get="{{ url_for('cliente.detalhe_cliente', cliente_id=cliente.id) }}"
+        c-target="#exibir-cliente" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button> <!-- Botão "Ver":
+             - Classe 'btn btn-secondary' para estilização com Bootstrap.
+             - 'c-get' é um atributo personalizado que contém a URL para obter os detalhes do cliente. 
+             - 'c-target' é um atributo personalizado para especificar onde o conteúdo deve ser exibido.
+             - 'data-bs-toggle="modal"' e 'data-bs-target="#exampleModal"' são atributos do Bootstrap para abrir um modal com os detalhes do cliente. -->
+
+        <button class="btn btn-primary" c-get="{{ url_for('cliente.form_edit_cliente', cliente_id=cliente.id) }}"
+        c-target="#form-cliente">Editar</button>
+        <!-- Botão "Editar":
+             - Classe 'btn btn-primary' para estilização com Bootstrap.
+             - 'c-get' é um atributo personalizado que contém a URL para obter o formulário de edição do cliente.
+             - 'c-target' é um atributo personalizado para especificar onde o conteúdo do formulário deve ser exibido. -->
+
+        <button class="btn btn-danger" c-delete="{{ url_for('cliente.deletar_cliente', cliente_id=cliente.id)}}"
+        c-remove-closest="tr">Deletar</button>
+        <!-- Botão "Deletar":
+             - Classe 'btn btn-danger' para estilização com Bootstrap.
+             - 'c-delete' é um atributo personalizado que contém a URL para deletar o cliente.
+             - 'c-remove-closest="tr"' é um atributo personalizado que remove a linha da tabela (tr) mais próxima após a deleção. -->
+    </td>
+<tr>

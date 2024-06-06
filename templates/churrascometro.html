@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/src/styles/churras.css"/>
+    <link rel="stylesheet" href="/static/src/styles/styles.css">
+
+    <title>Churrascômetro</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+          <img class="logo-img" src="/static/src/img/Image 1.svg" alt="logo">
+
+          <ul id="nav_list">
+              <li class="nav-item">
+                  <a href="/bino" target="_blank">Início</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/cardápio" target="_blank">Cardápio</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/bino" target="_blank">Sobre nós</a>
+              </li>
+              <li class="nav-item active">
+                  <a href="/churrascometro" target="_blank">Churrascômetro</a>
+              </li>
+              <li class="nav-item">
+                <a href="kits" target="_blank">Kit's churrasco</a>
+            </li>
+          </ul>
+
+          <a href="https://www.instagram.com/acougueiro_bino/"><button class="btn-default">
+            Peça aqui
+        </button></a>
+
+          <button id="mobile_btn">
+              <i class="fa-solid fa-bars"></i>
+          </button>
+      </nav>
+
+      <div id="mobile_menu">
+          <ul id="mobile_nav_list">
+              <li class="nav-item">
+                  <a href="/bino">Início</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/cardápio">Cardápio</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/kits">Kits Churr</a>
+              </li>
+          </ul>
+
+          <button class="btn-default">
+              Peça aqui
+          </button>
+      </div>
+  </header>
+
+    <div class="container">
+      <div id="hero">
+        <h1>Churrascômetro - Binu's Espetos</h1>
+        <h3>A fórmula secreta do churrasco em sua tela!</h3>
+      </div>
+
+      <div id="forms">
+      
+        <div>
+          <span class="descricao">1. Complete o cadastro</span>
+          <div id="cadastro" class="form card">
+            <div>
+              <h2>Cadastro</h2>
+              <span id="icone-remover" title="Clique para remover o cadastro"
+                >✖</span
+              >
+            </div>
+            <p class="informativo">Informe seus dados abaixo</p>
+            <form id="form-cadastro">
+              <div>
+                <label class="label">
+                  <span>Nome</span>
+                  <input type="text" required id="input-nome" />
+                </label>
+                <label class="label">
+                  <span>E-mail</span>
+                  <input type="email" required id="input-email" />
+                </label>
+                <label class="label">
+                  <span>CEP</span>
+                  <input type="text" required id="input-cep" />
+                </label>
+                <label class="label">
+                  <input type="checkbox" checked id="input-receber-promos" />
+                  Aceito receber e-mails com promoções
+                </label>
+              </div>
+              <div class="status-wrapper"></div>
+              <div class="btns-wrapper">
+                <button type="reset" class="btn-light" id="btn-cadastro-reset">
+                  Limpar
+                </button>
+                <button type="submit" class="btn-dark" id="btn-cadastro-submit">
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Formulário Quantidade pessoas -->
+        <div>
+          <span class="descricao">2. Selecione a quantidade de pessoas</span>
+          <div id="participantes" class="form card">
+            <h2>Participantes</h2>
+            <p class="informativo">No mínimo 1 adulto</p>
+            <form id="form-participantes">
+              <div>
+                <label class="label">
+                  <span>Homens</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="50"
+                    value="0"
+                    id="input-part-h" />
+                </label>
+                <label class="label">
+                  <span>Mulheres</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="50"
+                    value="0"
+                    id="input-part-m" />
+                </label>
+                <label class="label">
+                  <span>Crianças</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="50"
+                    value="0"
+                    id="input-part-c" />
+                </label>
+              </div>
+              <div class="status-wrapper"></div>
+              <div class="btns-wrapper">
+                <button type="reset" class="btn-light" id="btn-part-reset">
+                  Limpar
+                </button>
+                <button type="submit" class="btn-dark" id="btn-part-submit">
+                  Calcular
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela Quantitativos -->
+      <div id="quantitativos">
+        <span class="descricao">3. Vamos às compras!</span>
+        <div class="card">
+          <h2>Quantitativos</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>Unidade</th>
+              </tr>
+            </thead>
+
+            <tbody id="resultados">
+              <tr>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script defer src="/static/src/script/churras.js"></script>
+</body>
+</html>
